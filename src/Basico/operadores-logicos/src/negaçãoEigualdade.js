@@ -14,3 +14,6 @@ console.log(a !== b)
 
 console.log(a != b)
 // só faz comparação de valor
+
+console.log(!(a === b)) 
+// está negando a expressão
