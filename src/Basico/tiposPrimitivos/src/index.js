@@ -9,3 +9,6 @@ if(usuarioVerificado){
 }else{
     console.log("usuário não é verificado")
 }
+
+let pessoa = null
+//recebe valor indefinido
