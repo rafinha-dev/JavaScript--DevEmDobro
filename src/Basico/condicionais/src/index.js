@@ -1,4 +1,4 @@
- let nomeFilme = 'Vingadores'
+ let nomeFilme = 'Batman vs supermen'
 
  //  Isso são os desvios de condições do código
  if(nomeFilme === 'Vingadores'){
@@ -10,3 +10,7 @@
     // com isso consigo fazer o ultimo teste
     console.log("Não é o filme do vingadores")
  }
+
+ // condição ? console.log('true) : console.log('false')
+ 
+ true ? console.log('condição verdadeira') : console.log('condição falsa')
