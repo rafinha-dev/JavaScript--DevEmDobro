@@ -14,5 +14,6 @@ inputTelefone.disabled = true;
 // por que não consigo ver o desabled no console?
 
 function habilitarTelefone(){
-    
+    let inputTelefone = document.getElementById('telefone')
+    inputTelefone.disabled = false
 }
