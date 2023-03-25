@@ -1,0 +1,14 @@
+<filmes>
+    <filme id="1">
+        <titulo>Vingadores</titulo>
+        <sinopse> Loki (tom hiddleston) retorna a terra enviado pelos chtature, uma raça alienigena que pretende dominar os humanos. </sinopse>
+        <genero>Ação</genero>
+        <elenco> 
+            <ator>Ton Hiddleston</ator>
+            <ator>Samuel L. Jackson </ator>
+            <ator> Chris Evans </ator>
+        </elenco>
+        <direcao>Joss Whedon</direcao>
+    </filme>
+</filmes>
+<!-- Bem parecido com html e os itens ficam alinhados dentro do outro -->
