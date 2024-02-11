@@ -31,6 +31,41 @@
 <body>
     <main>
         <div>
+            <h2>Introdução ao JS</h2>
+            <img src="./src/introdução/internet.png" alt="">
+            <p>Quando um cliente que acessar uma página ele faz requests a um servidor que envia respostas que são chamadas de responses. <br>
+            Tudo que o cliente recebe são cópias dos arquivos que estão dentro do servidor</p>
+            <img src="./src/introdução/requests.png" alt="">
+            <p>O javascript nasceu para rodar do lado do cliente, mas hoje fora do lado do cliente ele já foi levado para fora do navegador com nodeJS.</p>
+
+            <h3>Pontos importantes do javascript</h3>
+            <p>O javascript possui alguns paradigmas</p>
+            <ul>
+                <li>Possui múltiplos paradigmas</li>
+                <ul>
+                    <li>Orientação a objetos</li>
+                    <li>Funcional</li>
+                    <li>Orientação a eventos.</li>
+                </ul>
+                <li>Possui tipagem dinâmica e fraca</li>
+                <ul>
+                    <li>Tipagem dinamica significa que o js vai definir o tipo</li>
+                    <li>Tipagem fraca significa que o js vai permitir que a gente faça operações, por exemplo, soma de uma variável de string e uma variável de número sem da erro.</li>
+                </ul>
+            </ul>
+            <p> No devtools é possível ver as copias dos arquivos que se recebeu dentro da página de network, e na pagina principal é possivel ver os elementos html, suas configurações de css e etc. <br>
+            Na area network é possível filtrar os resultados que vão aparecer. O programador cria páginas para serem disponibilidas no servidor, todos os arquivos que lá ficarão hospedados serão feito por desenvolvedores.</p>
+        </div>
+        <div>
+            <h2>Como surgir ou javasciprt</h2>
+            <img src="./src/introdução/js.png" alt="">
+            <p>O javascript foi criado em 10 dias em 1995 por brancan Eich que trabalhava na netscape. Naquela época não tinha animçoes nem nada do tipo usando css. Inicialmente ela se chama mocha.</p>
+            <p>O nome javascript é uma referência ao java com uma campanha de marca pra surfar na onda.</p>
+            <p>A ecma é uma empresa que padroniza, e o ecma script e o javascript são a mesma coisa e ecma script seria o nome oficial da linguagem.</p>
+            <p>Em 2017 trouxe a possibilidade de trabalhar com funções assincronas, e em 2018 trabalhar com promisses. O javascript depois de 2015 tem o nome padronizado pelo ano de lanaçamento</p>
+            <img src="./src/introdução/hostoria2000.png" alt="">
+        </div>
+        <div>
             <h2> Window e promp </h2>
             <img src="./src/PrimeiroCódigo/src/js/Peek 2024-02-10 23-46.gif" alt="">
             <p>Primeiro código javascript usando o JS no html e na folha se JS</p>
@@ -84,8 +119,24 @@
             <img style="width: 600px;" src="./src/PrimeiroCódigo/src/js/depuração2.gif" alt="">
             <p>Para que a depuração aconteça por padrão é necessário ter o node instalado na máquina na versão de pelo menos 18.4 <br>
                 Para que a depuração aconteça é necessário colocar o brackpoint no código, o código pode ter vários. </p>
-                Pode apertar F9 para criar o brackpoint e também clicar F5 para iniciar o vscode e selecionar o nodeJS. <br>
+               <p> Pode apertar F9 para criar o brackpoint e também clicar F5 para iniciar o vscode e selecionar o nodeJS. <br>
                 Seguindo o gif irá conseguir ver como depurar o código. O F5 também joga para o próximo brackpoint, e o F10 para a próxima linha. Essa depuração não funciona para capturar elementos DOM ou para funções como window().
+                </p>
+            <h3>Depurar e imprimir</h3>
+            <p>Depurar e imprimir é uma técnica para usar no código na hora de fazer a depuração inserindo mensagens no código a medida que a depuração irá acontecer.</p>
+            <img src="./src/depurar/2024-02-11_17-48.png" alt="">
+            <p>Quando já se tem o node instalado e aperta f5 pode iniciar a depuração, se não tiver nenhum brackpoint no códiog ele será executado diretamente sem parada. Ao usar o brackpoint haverão algumas opções como mostrado na foto, pode usar este menu do vscode para passar para próximas etapas.</p>
+            <ul>
+                <li>F5 Apertando f5 o código será executado ou irá passar para o proximo brackpoint</li>
+                <li>F10 Com o essa tecla irá para próxima linha mas ele não entra dentro de funções</li>
+                <li>F11 Essa entra dentro de funções, mas só funciona se tiver uma chamada de função.</li>
+            </ul>
+
+            <h3>Depurando com navegador</h3>
+            <p>É possível usar o navegador para depurar um código usando o vscode desde que seja com javascirpt puro. <br>
+                Para fazer isso é necessário usar o json de configuração e setar o navegador e a porta que será usada no live server.
+            </p>
+            <img src="./src/depurar/Peek 2024-02-11 18-22.gif" alt="">
         </div>
         <div>
             <h2>Tipos primitivos</h2>
@@ -206,6 +257,7 @@
             </div>
             <div>
                 <h2>funções</h2>
+                <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Functions">Material de apoio</a>
                 <p>Em funções que tem nome, coloque exatamente o que a função está fazendo. Crie funções que tem só uma responsabilidade. Pois fica difícil entender testar funções com multiplas funcionalidades e condiçóes.</p>
                 <p>A função é declaraca como function, e essa function é seguida pelo nome e dois parênteses que podem receber parâmetros na função. Então se abre e fecha chaves determinando o escopo da função que pode ou não retornar um resultado.</p>
                 <a href="./src/funcao/src/funcao-variavel.js"></a>
