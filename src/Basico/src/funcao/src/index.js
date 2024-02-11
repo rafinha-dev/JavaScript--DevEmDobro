@@ -26,4 +26,4 @@ function soma(numero1, numero2){
     //  o return sozinho não faz nada, para que ele faça eu preciso armazenar ele e ai sim decidir o que fazer
 }
 
-soma(2 , 4)
+let resultado = soma(2 , 4)
