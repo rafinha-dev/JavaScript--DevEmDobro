@@ -8,12 +8,3 @@ console.log(a==b)
 // verificação de igualdade de valor"
 console.log(a===b)
 //  verificação de igualdade e tipo
-
-console.log(a !== b)
-// negação de igualdade, o tipo sendo diferente ele mostra verdadeiro que eles não sao iguais
-
-console.log(a != b)
-// só faz comparação de valor
-
-console.log(!(a === b)) 
-// está negando a expressão
