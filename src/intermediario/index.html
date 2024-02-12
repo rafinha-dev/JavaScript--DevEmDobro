@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        hr{
+            width: 50%;
+        }
+    </style>
 </head>
 <body>
     <div>
@@ -50,6 +55,87 @@
         <p>Também são funções anonimas que são escritas de forma reduzida. A primeira redução é trocar a palavra function por =>. A segunda redução é que caso a função só tenha um parâmetro não será preciso colocar os parênteses, apenas ele e a arrow function. <br>
         E caso a função só tenha uma linha é possível remover também as chaves e o return, deixando tudo na mesma linha.</p>
         <a href="./src/arrow-functions/src/index.js">Exercício arrow function</a>
+    </div>
+    <div>
+        <h2>Higher order function</h2>
+
+        <h3>Passando função como parâmetro</h3>
+        <p>Também chamado de callback, funções que recebem funções como parâmetro, ou retornam outras funções.</p>
+        <p>Uma função pode retornar outra função ao invez de uma string ou números.</p>
+        <a href="./src/higher-order-functions/index.html">Exercício Higher order function</a>
+        <img src="./src/higher-order-functions/src/parâmetro.png" alt="">
+        <p>Neste exercício uma função é passada como parâmetro para outra função. Observe que a primeira função criada "calcularAnoDeNascimento" é armazenada dentro de uma variável e é uma função anonima. Portanto, para que ela seja chamada é preciso ter sido inicializada antes.</p>
+        <p>Os parâmetros da função estão nulos até que se receba algo, mas existem 3 para entrada. <br>
+        Abaixo tem a função anonima "imprimirAnoDeNascimento" que recebe o parametro anoDeNascimento.</p>
+        <p>A chamada da função calcular ano de nascimento foram informado 3 valores, (33, 3, imprimirAnoDeNascimento) quando a função é anonima é colocada sem os parênteses ela funciona como uma variável. Dentro da função que recebeu os parâmetros foram feitos alguns calculos e condições, e um dos valores obtidos foi dado como parâmetro para a função que foi passada na variável imprimir. Importante observar que a variavel ano de nascimento poderia ter qualquer nome, isso não impediria de ser passada como parâmetro. E que a chamada dessa função só ocorreu por que se usou o parâmetro que foi recebido com parênteses e um paâmetro para ele. Se eu apenas desse um console.log nesse parametro imprimir, seria mostrada a função que foi recebida e não a execulção dela.</p>
+        <hr>
+        <h3>Retornando função como parâmetro </h3>
+
+        <p>Pense que você precisa fazer calculos matematicos para dobrar, triplicar e quadruplicar um número aleatorio. Você poderia fazer assim: </p>
+        <pre>
+        <code>
+          
+            function dobrar(numero){
+                return numero * 2
+            }
+            function triplicar(numero){
+                 return numero * 3
+            }
+            function quadruplicar(numero){
+                return numero * 4
+            }
+
+            console.log(dobrar(2)) 
+
+        </code>
+        </pre>
+        <p>Todas as vezes que eu precisar de um novo multiplicador terei de criar uma noova função e setar manualmente qual será o valor de multiplicação que aquela função irá retornar.</p>
+        <p>A próxima forma de fazer isso é fazer com que a função retorne uma função e resolver com um parâmetro para cada.</p>
+        <a href="./src/higher-order-functions/src/melhoramento.js">Exercício higher order function</a>
+        <p>Agora neste caso é possível criar uma função que multiplica retornando uma função com o número multiplicado. E para acessar o parâmetro das duas funções será preciso guardar em uma variável a função de multiplicação com seu parâmetro </p>
+        <img src="./src/higher-order-functions/src/return.png" alt="">
+        <p>Ao guardar em uma variavel a função, se usar um console.log será mostrado a função, a questão é, salve o parâmetro, quando a função for chamada já tendo parâmetro, o parâmetro informado na chamada da variável será para a função que armazenou, e a próxima para função da qual retorna. <br>
+        Dessa forma, cada novo tipo de parâmetro multiplicador que for cliado é só declarar a variável atribuindo a função com seu parâmetro multiplicador.</p>
+    </div>
+    <div>
+        <h2>Array</h2>
+        <a href="https://www.w3schools.com/js/js_arrays.asp">Material de Apoio</a>
+        <p>Ele pode armazenar qualquer tipode dado numerico, string, boolean e até mesmo outro array.</p>
+        <a href="./src/array/index.html">Exercício array</a>
+        <p>O array pode ser identificado por ser aberto e fechado por colchetes e os elementos do array são separados por vírgula. O acesso dos itens do array é feito pelo nome da variável e seu índice, a posição do elemento, passado dentro de colchetes. Caso a posição da chave não conste no array ele irá retornar undefined.</p>
+
+        <hr>
+        <h3>Arrays multidimensionais</h3>
+        <p>Quando um array tem um arry dentro dele, ele é multidimensional. Ele pode ter arrays infinitos dentro, mas é normal encontrar apenas bidimensionais.</p>
+        <a href="./src/array/src/array-multidimensional.js">Exercício array multidimensional</a>
+        <p>Para acessar um array interno dentro do outro será preciso colocar mais de uma chave índice após a outra. Para imprimir de forma que fique mais fácil de visualizar no console é possível usar o método <code>table()</code></p>
+        <hr>
+        <h2>Iterar sobre um array</h2>
+        <a href="./src/array/src/iterar.js">Exercício iterar sobre array</a>
+        <p>Para iterar sobre um array é nessesário usa um laço de repetição como o for</p>
+
+        <pre>
+            <code>
+                for(let i = 0; i < frutas.length; i++){
+                    console.log('Fruta ' + frutas[i])
+                }
+            </code>
+        </pre>
+        <p>Dessa forma será possível acessar uma propriedade do aray. <br>
+        Outra forma de fazer isso é usando o laço <code>forEach()</code> Dessa forma é presico acessar a propriedade e colocar <code>.forEach()</code> que é o método. Essa função é um callback pois uma função é passada como parâmetro para ela. Existem 3 parâmetros que podem ser passados no callback do forEach: </p>
+        <ul>
+            <li>item</li>
+            <li>indice</li>
+            <li>array</li>
+        </ul>
+        <p>Outros métodos que podem ser usados no array são</p>
+        <ul>
+            <li>array.push(). Adiciona elementos ao final do array</li>
+            <li>array.pop() . Retira o ultimo elemento do array</li>
+            <li>array.shift() . Remove o primeiro elemento do array</li>
+            <li>array.unshift() . Adiciona um elemento no começo do array.</li>
+            <li>array.index.Of() . O que for informado dentro do indexOf será informado sua chave indice.</li>
+        </ul>
     </div>
 </body>
 </html>

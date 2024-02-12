@@ -4,10 +4,12 @@ const calcularAnoDeNascimento = function(idade, mesDeNascimento, imprimir){
     if(mesDeNascimento > mesAtual) anoDeNascimento--
     // se meu if tiver só uma linha também posso reduzir as chaves.
     imprimir(anoDeNascimento)
+
+    console.log(imprimir)
 }
 
 let imprimirAnoDeNascimento = anoDeNascimento => {
     console.log('Seu ano de nascimento é: ' + anoDeNascimento)
 }
 
-calcularAnoDeNascimento(26, 9, imprimirAnoDeNascimento)
+calcularAnoDeNascimento(26, 9, imprimirAnoDeNascimento) 
