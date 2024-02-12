@@ -24,5 +24,32 @@
             exercício escopo global.
         </a>
     </div>
+    <div>
+        <h2>Hoisting</h2>
+        <a href="https://developer.mozilla.org/pt-BR/docs/Glossary/Hoisting">Material de apoio</a>
+        <a href="https://www.w3schools.com/js/js_hoisting.asp">Material de apoio 2</a>
+        <p>O hoisting é um comportamento que acontece por debaixo dos panos no javascirpt, de forma geral as variáveis podem ser pensadas de duas maneiras, a declaração e a atribuição. Na prática o javascript entende elas como duas instruções separadas. Veja o exercício.</p>
+        <a href="./src/hoisting/src/declaracaoeatribuicao.js">Exercício Declaracao e atribuição.</a>
+        <p>Todas as declarações de variáveis ao ser executadas são movidas para o topo do escopo limite, seja ele global ou local. Isso é chamado de hoisting, ele move somente a declaração, e não a atribuição, essa é deixada no lugar onde foi atribuída. </p>
+        <a href="./src/hoisting/src/hoisting.js">Exercício hoisting</a>
+        <p>Era esperado no exercício que houvesse um erro de referência, mas pelo tipo de hoisting sofrido pela variavel do tipo var, ela recebe um undefined no lugar de erro. Já as variáveis do tipo let e const não podem ser lidas ou escritas até que tenham sido totalmente inicializadas. Então dará erro de referência, apesar de ser içada não retornará valor nenhum</p> 
+        <a href="./src/hoisting/src/hoistinglet.js">Exercício de Hoisting let</a>
+        <p>Para que a variável seja dada como undefined, é preciso que seja ao menos inicializada antes de ser chamada. E isso garante uma melhor prática, por que isso obriga a declarar antes de usar.</p>
+        <a href="./src/hoisting/index.html">Exercício erro de referência no console</a>
+    </div>
+    <div>
+        <h2>Funções anônimas</h2>
+        <p>Funções anônimas são funções que não tem um nome, ela pode ser usada para atribuir uma função a uma variável por exemplo e retornar algo da função para variável. </p>
+        <a href="./src/funçõesAnonimas/src/index.js">Exercício função anonima</a>
+        <p>Dessa forma do exercício é possível ter uma função dentro da variável. Ela pode ser invocada como função, ou como resultado da função. <br>
+        è possível passar parâmetros para essa função as colocando dentro dos parâmetros normais. Essa função do caso pode não ter um nome, mas pode ser chamada pelo nome da variável.</p>
+    </div>
+    <div>
+        <h2>Arrow functions</h2>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">Material de referência.</a>
+        <p>Também são funções anonimas que são escritas de forma reduzida. A primeira redução é trocar a palavra function por =>. A segunda redução é que caso a função só tenha um parâmetro não será preciso colocar os parênteses, apenas ele e a arrow function. <br>
+        E caso a função só tenha uma linha é possível remover também as chaves e o return, deixando tudo na mesma linha.</p>
+        <a href="./src/arrow-functions/src/index.js">Exercício arrow function</a>
+    </div>
 </body>
 </html>

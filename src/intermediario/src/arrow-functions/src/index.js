@@ -11,7 +11,7 @@ const incentivarQuester = nomeQuester => {
 }
 
 incentivarQuester('rafael')
-// o parâmetro não precisa necessariamente dos parênteses também.
+// o parâmetro não precisa necessariamente se for apenas um.
 
 // -------------------------------------------------------------------
 let Soma = (numero1, numero2) => numero1 + numero2
