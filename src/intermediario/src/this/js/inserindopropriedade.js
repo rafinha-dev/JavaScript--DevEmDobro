@@ -3,12 +3,13 @@ let comida = {
     temperatura: 0
 }
 
-comida.cozinhar = function(temperaturaDeCozimento){
+comida.cozinhar = function(comidaParaCozinhar, temperaturaDeCozimento){
+    // comidaParaCozinhar.temperatura = temperaturaDeCozimento
     this.temperatura = temperaturaDeCozimento;
 
 }
-console.log(comida)
 
+// comida.cozinhar(comida, 100)
 comida.cozinhar(100)
 
 console.log(comida)

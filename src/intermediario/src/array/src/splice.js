@@ -6,5 +6,5 @@ console.log(frutasExtraidas)
 
 console.log(frutas)
 
-let frutasAdicionadas = frutas.splice(1,1, 'Jaca', 'Amora')
+let frutasAdicionadas = frutas.splice(1,2, 'Jaca', 'Amora')
 console.log(frutas)

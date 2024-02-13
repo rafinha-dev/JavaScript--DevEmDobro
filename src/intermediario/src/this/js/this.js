@@ -1,3 +1,5 @@
+
+
 let usuario = {
     nome: 'Ricardo', 
     saudar: function(){

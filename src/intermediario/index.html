@@ -136,6 +136,98 @@
             <li>array.unshift() . Adiciona um elemento no começo do array.</li>
             <li>array.index.Of() . O que for informado dentro do indexOf será informado sua chave indice.</li>
         </ul>
+        <hr>
+        <h2>Slice e splice</h2>
+        <p>O slice é um dos métodos para manipulação de array. Ele corta um pedaço desse array sem afetar o array original, somente extraindo uma parte desse array</p>
+        <a href="./src/array/src/slice.js">Exercício slice</a>
+        <p>O slice tem dois parâmetros, o número inicial da chave index e o número final do pedaço que ele vai capturar gerando uma cópia.</p>
+
+        <p>O splice é muito bom quando se quer remover um ítem pela posição do indice do indice e gerar um totalmente novo. Diferente do outro método ele remove do array original.</p>
+        <a href="./src/array/src/splice.js">Exercício splice</a>
+        <p>È possível com o splice remover e adicionar ao mesmo tempo. Para isso é possível passar logo após as chaves índice os elementos que deseja inserir como parãmetro.</p>
+        <code>
+            <pre>
+                let frutasAdicionadas = frutas.splice(1,2, 'Jaca', 'Amora')
+            </pre>
+        </code>
+    </div>
+    <div>
+        <h2>Objetos</h2>
+        <a href="https://www.w3schools.com/js/js_objects.asp">Material de apoio</a>
+
+        <p>Um objeto tem propriedades que são as características do objetos. <br>
+        Mesmo que o objeto seja uma const é possível trocar os valores das propriedades dentro dele, mas não é possível atribuir um novo objeto.</p>
+        <a href="./src/objetos/index.html">Exercício objetos</a>
+        <p>É possível inserir propriedades dentro de um objeto colocando objeto.novapropriedade = x ou navegar dentro dele para verificar valores de propriedades.</p>
+    </div>
+    <div>
+        <h2>Métodos</h2>
+        <a href="https://www.w3schools.com/js/js_objects.asp">Material de apoio</a>
+        <p>Método é uma função dentro de um objeto.</p>
+        <a href="./src/metodo/index.html">Exercício método</a>
+        <p>Não se preocupe com o this, para chamar um método de um objeto use <code>objeto.função()</code> , isso que irá dizer que vai invocar a funçao.</p>
+    </div>
+    <div>
+        <h2>This</h2>
+        <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/this">Material de apoio this</a>
+        <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Strict_mode">Material de apoio strict mode</a>
+
+        <p>O this funciona com escopos, e pode ter dois tipos o global e o local. <br>
+        Ao começar a criar o código está no escopo global</p>
+        <a href="./src/this/index.html">Exercício this</a>
+        <p>Se eu passar o this no escopo global será igual ao objeto window. E se eu pegar o this declarado do escopo global e o chamar dentro de uma função, pode-se dizer que o this está vazando o escopo global para dentro da função. <br>
+        Para gerenciar melhor melhor a política do escopo, é só usar o 'use strict' no início do documento js, fazendo com que o escopo global não vaze para dentro da função.</p>
+        <p>Variáveis declaradas com this.variavel = x, são inseridas diretamente no objeto window.</p>
+        <h3>This no contexto do método</h3>
+        <a href="./src/this/metodo.html">Exercício this</a>
+        <p>A principio o this no contexto do método não é preciso fazer uso do use strict, ele referencia o escopo em que está se usado sozinho. Caso usado com this.propriedade irá referenciar a propriedade já que o this nesse caso é igual ao objeto.</p>
+        <a href="./src/this/inserindoMetodo.html">Exercício this no método</a>
+        <p>Observe o exemplo do exercício. Quando inserindo um método dentro do objeto se passou o proprio objeto para acessar sua propriedade. Com esse caso se tratando de um objeto, o contexto no qual está inserido o this permite que não seja necessário passar como parâmetro usando apenas o this, fazendo referência ao proprio objeto ao qual está sendo instanciado.</p>
+    </div>
+    <div>
+        <h2>Diferença entre array e objetos</h2>
+        <p>O array funciona muito bem quando se trabalha com listas, quando se coloca vários elementos dentro de uma lista.</p>
+
+        <a href="./src/arrayXobjetos/index.html">Exercício array x objetos</a>
+        <p>Uma lista de frutas seria muito bem representada por um array</p>
+        <p>Já o objeto nos ajuda a aproximar o objeto do mundo real e agrupar informações. Seria muito útil armazenar os valores de um ecomerce com uma seção de vendas por exemplo.</p>
+        <p>Um array pode receber um objeto caso seja necessário e é muito útil. Para acessar é usar a chave index e o .propriedade</p>
+        <hr>
+        <h2>Objetos e arrays em conjunto</h2>
+        <p>È possível usar um objeto dentro de um objeto.</p>
+        <a href="./src/arrayXobjetos/src/objetoXarray.js">Exercício objeto e array</a>
+        <p>Bastante usado em uma estrutura de JSON, é possível que um array com um objeto seja colocado em uma propriedade de um outro objeto. <br>
+        Para se acessar esses elementos é preciso que se utilize os caminhos e chave index para acessar estas propriedades. Caso seja coeso, é possível usar essa estrutura do exercício no seu código.
+        </p>
+    </div>
+    <div>
+        <h2>DOM</h2>
+        <p>Atravez da palavra document, é possível acessar e remover conteúdos de elementos html usando o document. <br>
+        Usando o devTools será possível ver que o document é todo o conteúdo da página.
+        </p>
+        <hr>
+        <h3>Selecionando elementos com document</h3>
+
+        <a href="https://developer.mozilla.org/pt-BR/docs/Web/API/Document/querySelectorAll">Material de apoio queryselectorAll</a>
+        <a href="https://www.w3schools.com/js/js_htmldom_document.asp">Material de apoio DOM</a>
+        <p>Para armazenar um elemento é possível que se coloque um document.getElementById(), como é recomendado ter só um id com mesmo nome por página ele é eficaz para buscar esse elemento HTML.Irão existir outros métodos para capturar elemento DOM, são eles: </p>
+        <ul>
+            <li>document.getElementByClassName() retorna uma HTML collection</li>
+            <li>document.getElementByTagName() retorna uma HTML colection</li>
+            <li>document.getElementById() retorna uma variável</li>
+            <li>document.querySelector() deve ser informado com . e # qual a busca deve ser feita e só retorna um elemento</li>
+            <li>documento.QuerySelectorAll() retorna uma node list.</li>
+            <a href="./src/DOM/index.html">Exercício buscas de elementos DOM </a>
+        </ul>
+    </div>
+    <div>
+        <h2>Manipulação de DOM</h2>
+        <a href="https://www.w3schools.com/jsref/prop_html_innerhtml.asp">Material de apoio</a>
+
+        <a href="./src/DOM-manipulação/innerHTML/index.html">Exercício innerHTML</a>
+        <p>O que é feito no exercício é imitar uma tela de rede social, pegar os campos que foram preênchidos no input e inserir na tela por meio de uma chamada de função.</p>
+        <p>Para isso é preciso buscar o input em que o usuário irá preêncer o campo, acessar esse valor. <br>
+        Depois é necessário salvar esse valor e imprimir ele na tela. em um campo abaixo. Para isso pode-se usar o innerHTML = , caso usar somente o = ele irá sobreescrever, mas se usar += irá adicionar mais de um.</p>
     </div>
 </body>
 </html>
