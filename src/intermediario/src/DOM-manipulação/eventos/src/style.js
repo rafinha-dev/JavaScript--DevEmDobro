@@ -1,4 +1,4 @@
-// let select = document.querySelector('select[name=estado]')
+let select = document.querySelector('select[name=estado]')
 
 // select.addEventListener('change', function()
 // {

@@ -228,6 +228,97 @@
         <p>O que é feito no exercício é imitar uma tela de rede social, pegar os campos que foram preênchidos no input e inserir na tela por meio de uma chamada de função.</p>
         <p>Para isso é preciso buscar o input em que o usuário irá preêncer o campo, acessar esse valor. <br>
         Depois é necessário salvar esse valor e imprimir ele na tela. em um campo abaixo. Para isso pode-se usar o innerHTML = , caso usar somente o = ele irá sobreescrever, mas se usar += irá adicionar mais de um.</p>
+        <hr>
+        <h3>Manipulando estilos</h3>
+        <a href="https://www.w3schools.com/jsref/dom_obj_style.asp">Material de referência DOM</a>
+        <a href="https://javascript.info/dom-attributes-and-properties">Material de referência atributos DOM</a>
+        <p>Para fazer a alteração de uma cor de fundo é preciso pegar o elemento DOM com algum dos métodos citados e usar o objeto style pelo javascript. </p>
+        <code>
+            <pre>
+                function alterarCorDeFundoPrimeiroPost(){
+                    let posts = document.getElementsByClassName('post')
+                
+                    console.log(posts)
+                
+                    let primeiroPost = posts[0]
+                    primeiroPost.style.backgroundColor = 'red'
+                }
+            </pre>
+        </code>
+        <p>Todas as propriedades CSS podem ser alteradas com esse objeto. A outra forma de fazer é adicionando uma classe pre configurada usando este método:</p>
+        <code>
+            <pre>
+                function aumentarFonteSegundoPost(){
+                    let post2 = document.getElementsByClassName('texto-post')
+                
+                    post2[1].classList.add('fonte-grande')
+                    // adicionou la do style do meu html a classe fonte grande.
+               
+                }
+            </pre>
+        </code>
+        <a href="./src/DOM-manipulação/styleComDOM/index.html">Exercício DOM style</a>
+        <p>Para modificar os atributos de um checkbox por exemplo é possível fazer com javascript</p>
+        <code>
+            <pre>
+                function marcarRadio(genero){
+                    let radioMasculino = document.getElementById('genero-masculino')
+                
+                    let radioFeminino = document.getElementById('genero-feminino')
+                
+                    if(genero === 'M'){
+                        radioMasculino.checked = true
+                    }else if( genero === 'F'){
+                        radioFeminino.checked = true
+                    }
+                }
+            </pre>
+        </code>
+        <p>Essa condição foi feita interagindo com um botão que altera o valor de um checked</p>
+        <hr>
+        <h3>Eventos DOM</h3>
+        <p>Um evento js pode ser chamado pelo html ou pelo havascript. Um evento de click por exemplo pode ser chamado pelo html</p>
+        <code>
+            <pre>
+                < button onclick="mostrarAlerta()"></>
+            </pre>
+        </code>
+        <p>Dessa forma é necessario colocar um ON na frete do evento que será monitorado. <br>
+        Já pelo javascript é possível fazer o monitoramento do elemento o capturando e colocando um listner</p>
+        <code>
+            <pre>
+                let select = document.querySelector('select[name=estado]')
+                document
+                .querySelector('select[name=estado]')
+                .addEventListener('change', function(event)
+                {
+                console.log(event.target.value)
+                }
+                )
+            </pre>
+        </code>
+
+        <a href="./src/DOM-manipulação/eventos/index.html">Exercício eventos DOM</a>
+    </div>
+    <div>
+        <h2>Como encontrar erros</h2>
+        <p>O primeiro lugar que você pode olhar se tem algum erro na aplicação é no console do navegador e o tipo de erro que foi apresentado.</p>
+        <img src="./src/erros/src/2024-02-13_15-57.png" alt="">
+        <p>Primeira coisa, leia o erro com calma e olhe em qual linha esse erro foi apresentado.Só isso provavelmente já vai dar uma solução ao problema. Quando vai procurar o erro para essa solução pesquise no google primeiro pela linguagem e escreva o nome do erro na frente.</p>
+
+        <a href="./src/erros/index.html">Exercício procurando erros</a>
+        <p>Usar o script sempre no final da folha é uma forma de garantir que todos os elementos capturados pelo DOM não sejam nulos.</p>
+        <code>
+            <pre>
+                let inputTelefone = document.getElementById('telefone');
+
+                console.log(inputTelefone);
+
+                inputTelefone.disabled = true;      
+            </pre>
+        </code>
+        <p>Com esse exemplo acima imagine que esteja acima do código HTML, isso é por que o código não foi renderizado ainda. <br>
+        O desable é para desabilitar a digitação dentro de um campo</p>
     </div>
 </body>
 </html>
