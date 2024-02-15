@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript avançado</h1>
+    <div>
+        <h2>Filter</h2>
+        <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">Material de apoio</a>
+        <p>O filter é uma função que aceita outra função como parâmetro, e ela vai ser usada para filtrar. Imagine que voce tem um aray com objeto de pessoas de varias idades e queira filtrar somente as de 33 anos, seria possível fazer com laço for.</p>
+        <pre>
+            <code>
+                let pessoasComIdadeDe33anos = []
+
+                for(let i = 0; i < pessoas.length; i++){
+                    if(pessoas[i].idade === 33){
+                pessoasComIdadeDe33anos.push(pessoas[i])
+                    }
+                }
+            </code>
+        </pre>
+        <p>Usando o método filter fica mais fácil, como ele é um callback não será preciso criar a variável i, percorrer o array por que ele faz isso tudo sozinho, e ele gera um novo array com os valores com um número menor de elementos.</p>
+        <a href="./filter/src/filter/index.html">Exercício exemplo filter</a>
+        <a href="./filter/src/filter/src/filterTeste.js">Exercício apenas filter</a>
+        <p>Como no exercício é só usar o callback, usar o pessoas como parâmetro e retornar os que tem valor = a 33. Se esse filter for feito dentro de uma variável ela já irá guardar o resultado. </p>
+    </div>
+    <div>
+        <h2>Map</h2>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map">Material de apoio</a>
+        <p>O map parece com o filter mas é usado para transformar o array em um array totalmente novo com o mesmo número de elementos. É como uma cópia desse elemento.</p>
+        <code>
+            <pre>
+                let NomeDasPessoas = []
+                for{let 1 = 0; 1 < pessoas.lenght; 1++}{
+                    nomeDasPessoas.push(pessoas[i].nome)
+                }
+            </pre>
+        </code>
+        <p>Dessa forma seria a maneira de se fazer com o for, mas ela é muito mais verbosa do que usar o map, adicionando o nome das pessoas a ultima posição do array a medida que o index aumenta.</p>
+        <a href="./map/src/index.js">Exercício Map</a>
+        <p>Usando o map ele vai receber uma função como parâmetro e essa função pode-se usar o objeto percorrido como parâmetro dela. Essa função deverá retornar o resultado a variavel a qual está sendo atribuida o map, é interessante para iterar sobre objetos em um array, ou concatenar os valores desse objeto. Ele recomendou usar mais o map() que o forEach() para iterar sobre um array.</p>
+
+    </div>
+    <div>
+        <h2>Reduce</h2>
+        <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce">Material de referência.</a>
+
+        <p>Digamos que nas ordens de compras da bolsa de valores que ficam armazenadas dentro de uma array, contem objetos com o tipo, valor e etc. Para acessar esses valores da ordem usando o for ficaria assim: </p>
+
+        <pre>
+            <code>
+                let quantidadeDeOrdens = 0 
+                for(let i = 0; i < ordens.length; i++){
+                    quantidadeDeOrdens += ordens[i].quantidade
+                    
+                }
+            </code>
+        </pre>
+        <p>È preciso iterar sobre o array e selecionar a propriedade dela pelo indice e propriedade.</p>
+        <a href="./reduce/src/index.js">Exercício reduce</a>
+        <p>Já usando reduce é parecido com o map retornando um novo array, mas é possível colocar qual é o index inicial ao seu fim. <br>
+        Existem 2 parâmetros para o map, o objeto que irá receber, e o objeto que será iterado, confira o exercício</p>
+        <p> Para fazer a iteração e atribuir o valor com uma variável com for, é preciso colocar o sinal += pois se não será substituida, mas no reduce, já que ele cria um array é apenas colocar o + que não irá substituir os valores de dentro.</p>
+    </div>
+    <div>
+        <h2>Interpolação de string</h2>
+        <p>Antes do es6 não existia a interpolação, fazendo com que para concatenar é preciso interromper a string e colocar um + para inserir outros valores.</p>
+        <a href="./templateString/src/index.js">Exercício interpolação de string</a>
+        <p>Agora é possível colocar o texto com a variavel sem usar o +, apenas colocando a variável dentro de um cifrão com chaves na frente e a expreção dentro de crases. Também seria possivel chamar função dentro das crases</p>
+    </div>
+    <div>
+        <h2>Desustruturação de objetos e arrays</h2>
+        <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">Material de apoio</a>
+        <p></p>
+        <p>Permite extrair variáveis de objetos ou arrays. Na declaração já mapeie as propriedades do objeto para essas variáveis.</p>
+        <a href="./desestruturacao/index.html">Exercício desestruturação</a>
+        <code>
+            <pre>
+                let pessoa = {nome: 'Roberto', sobrenome: 'Dias', idade: 33 }
+
+                let nome = pessoa.nome
+                let idade = pessoa.idade
+
+                console.log(nome)
+                console.log(idade)
+            </pre>
+        </code>
+        <p>essa é a forma que tem sido usada para expressar um objeto, mas com a desestruturação ficará um pouco mais prático.</p>
+        <code>
+            <pre>
+                let {nome: nome, idade:idade} = pessoa
+            </pre>
+        </code>
+        <p>Fazendo dessa forma já informo o javascript que estou fazendo uma desestruturação para o objeto pessoa. E caso eu queira dar um console.log() na propriedade escolhida é só usar o nome da propriedade como nome da variável. <br>
+        Como está usando o mesmo nome da propriedade com o nome da variavel é possível omitir o nome da propriedade.</p>
+        <p>Já na desestruturação de array diferente do objeto que usa chaves será preciso usar o array e atribuir com o array. Na desestruturação do array é baseada no indice do array, não vai funcionar os : da propriedade.</p>
+    </div>
+    <div>
+        <h2>Spread</h2>
+        <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Spread_syntax">Material de apoio</a>
+        <p>Com o spread é possível expandir os elementos de um objeto iteravel, são objetos que podem ser precorridos.</p>
+        <code>
+            <pre>
+                const pessoas = ['Roberto', 'Ricardo', 'Raphael']
+                console.log(pessoas)
+                console.log(...pessoas)
+            </pre>
+        </code>
+        <p>Ele irá retornar o array com os itens separadamente. <br>
+        Antigamente para unir dois arrays é preciso usar o metodo concat(), hoje é só usar o spread dentro de um array novo e colocar junto com os arrays que será preciso concatenar. E ele também serve para clonar um objeto</p>
+        <a href="./spread/index.html">Exercício spread</a>
+    </div>
+    <div>
+        <h2>REST</h2>
+        <p>O parâmetro rest permite passar um número indefinido de arumentos que se passa para uma função. Bem parecido com o spread, ele é uma forma de permitir passar um array não declarado como parâmetro para um função. Se eu quiser criar uma lista de nomes e esses nomes serem passados dentro de uma mesma mensagem, é possível usar o REST para mandar essa mensagem por parâmetro um um calback como map ou ForEach.</p>
+        <code>
+            <pre>
+                function incentivarQuesters(mensagem, ...nomeQuesters){
+
+                    nomeQuesters.map( nomeQuester => console.log(`${mensagem} ${nomeQuester}`))
+                 
+                 
+                 }
+                 
+                 incentivarQuesters('Parabéns por ter chego ao módulo de JavaScript avançado', 'Joao', 'Pedro', 'Rafael')
+            </pre>
+        </code>
+        <a href="./REST/index.html">Exercício rest</a>
+        <p>O Rest só pode ser passado como últmo parâmetro.</p>
+    </div>
+    <div>
+        <h2>Set time out ou settimeInterval</h2>
+        <p>Ambas são callbacks e são funções assincronas, o settimeout executa um código depois de um periodo de tempo, e o interval em um determinado intervalo de tempo.</p>
+    </div>
+    <code>
+        <pre>
+            setTimeOut(function(){
+
+            }, 3000)
+        </pre>
+    </code>
+    <p>O tempo é passado em milisegundos e não segundos, este será o segundo parâmetro da função, e essa função é uma função assincrona.</p>
+    <a href="./SetTimeOut||interval/index.html">Exercício setTimeOut e Interval</a>
+    <p>No caso do setTimeInterval(), será executada várias vezes de acordo com o intervalo que for determinado.</p>
+    <p>Para parar e colocar uma interrupção no intervalo é preciso atribuir essa função a uma variável, e usar o método clearInterval() ou clearTimeOut().</p>
+</body>
+</html>

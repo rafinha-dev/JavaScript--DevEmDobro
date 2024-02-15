@@ -9,13 +9,12 @@ console.log(pessoasComIdadeDe33anos)
 
 // a outra forma de fazer é executando a função igual está abaixo.
 
-function filter(){
+filter()
 
-let pessoasComIdadeDe33anos = []
+let pessoasComIdadeDe33anosFor = []
 
 for(let i = 0; i < pessoas.length; i++){
     if(pessoas[i].idade === 33){
         pessoasComIdadeDe33anos.push(pessoas[i])
     }
-}
 }

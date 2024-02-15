@@ -13,4 +13,6 @@ let idDoIntervalo = setInterval( () => {
 
 
 console.log(idDoIntervalo)
+clearInterval(idDoIntervalo)
 console.log('console ao final')
+
