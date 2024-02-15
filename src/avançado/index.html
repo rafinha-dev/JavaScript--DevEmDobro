@@ -134,7 +134,7 @@
     <div>
         <h2>Set time out ou settimeInterval</h2>
         <p>Ambas são callbacks e são funções assincronas, o settimeout executa um código depois de um periodo de tempo, e o interval em um determinado intervalo de tempo.</p>
-    </div>
+    
     <code>
         <pre>
             setTimeOut(function(){
@@ -146,5 +146,72 @@
     <a href="./SetTimeOut||interval/index.html">Exercício setTimeOut e Interval</a>
     <p>No caso do setTimeInterval(), será executada várias vezes de acordo com o intervalo que for determinado.</p>
     <p>Para parar e colocar uma interrupção no intervalo é preciso atribuir essa função a uma variável, e usar o método clearInterval() ou clearTimeOut().</p>
+    </div>
+    <div>
+        <h2>Assincronismo</h2>
+        <a href="https://www.30secondsofcode.org/js/s/sync-async/">Material de apoio Sincronismo e assincronismo</a>
+        <p>O javascript é uma linguagem sincrona, tem uma dependência de execução de uma linha para outra. já funções assincronas são executadas independente da ordem de execução pois elas não dependem da linha de cima e da linha de baixo.</p>
+        <p>Fazer um café pode ser feito de duas manairas, colocar um café para ferver agua e esperar ela ser fervida, ou fazer as outras tarefas enquanto a agua está sendo fervida. Uma forma é assincrona, e outra é sincrona.</p>
+        <a href="./sincronismoAssincronismo/index.html">Exercício assincronismo</a>
+    </div>
+    <div>
+        <h2>Promisses</h2>
+        <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise">Material de apoio Promisses.</a>
+        <p>Promisses são uma maneira um pouco mais nova de se trabalhar com assicronissidade no javascript de forma legivel e gerenciavel, facilita o tratamento de exessões.Representam um valor que pode ou não estar disponível no futuro. </p>
+        <p>As promisses também solucionam o problema do callback hell. <br>
+        Existem 4 estados para as promisses:</p>
+        <ul>
+            <li>Pendente: criada e não executada</li>
+            <li>Realizada: quando teve sucesso na execução (resolve)</li>
+            <li>Recusada: teve falha na execução (reject)</li>
+            <li>Estabelecida</li>
+        </ul>
+        <p>Pendente é o estado inicial de toda promisse e a gente que define se ela foi realizada ou recusada. Para criar uma promisse: </p>
+        <code>
+            <pre>
+                new Promise((resolve, reject) =>{
+
+                })
+            </pre>
+        </code>
+        <p>A promisse é uma classe no JavaScript, e se escreve com a primeira letra maiuscula, é um callback.</p>
+        <p>O resolve e o reject são uma função, o resolve é chamado para mudar o estado da promisse para realizada, e o reject para quando estiver recusada.</p>
+        <a href="./promisses/index.html">Exercício Promisses</a>
+        <code>
+            <pre>
+                let ferverAgua = function(chaleiraNoFogao, fogaoLigado){
+                    return new Promise ((resolve, reject) => {
+                        if(chaleiraNoFogao && fogaoLigado){
+                            console.log('começando o processo de ferver a água.')
+                            resolve()
+                        }else{
+                            console.log("è necessário ligar o fogao e colocar agua na chaleira.")
+                            reject()
+                        }
+                    })
+                }
+            </pre>
+        </code>
+        <p>Não é preciso ter um return para cada um dos fluxos, o return pode retornar o resultado da promisse. <br>
+        Quando a promisse der erro, ele precisa ser tratado para que não dê erro no terminal, toda vez que é retornado o resolve ou reject elas são a mudança de estado.</p>
+
+        <h3>Entendendo a promisse</h3>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled">Material de referência promisse all.settled()</a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all">Material de referência promisse.all</a>
+        <p>Existirão 2 possiveis estados da promisse</p>
+        <img src="./promisses/src/promisse.png" alt="">
+        <p>Uma promisse pode ser como comer pizza em uma pizzaria, com a analogia semelhante ao assincronismo. Se der tudo certo retorna um valor se não retorna outro. </p>
+        <img src="./promisses/src/cenarios.png" alt="">
+
+        <h3>Promisse.all()</h3>
+        <p>Se quiser que todas as pizzas chegem ao mesmo tempo poderia usar esse metodo, mas se uma falhar não retorna nenhuma.</p>
+        <code> const x = Promisse.all([p1, p2, p3])</code>
+        <p>O promisse.all tem um array, se precisar do valor das 3 promisses se usa o promisse.all, mas se precisar de ao menos uma, utiliza o .allSettle(), e caso não tenha nenhuma promisse retorna null.</p>
+
+        <h1>Completar essa parte com a aula complementar</h1>
+    </div>
+    <div>
+
+    </div>
 </body>
 </html>

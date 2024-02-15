@@ -1,4 +1,5 @@
-
+let chaleiraNoFogao = true
+let fogaoLigado = true
 
 let ferverAgua = function(chaleiraNoFogao, fogaoLigado){
     return new Promise ((resolve, reject) => {
@@ -12,7 +13,6 @@ let ferverAgua = function(chaleiraNoFogao, fogaoLigado){
     })
 }
 
-let chaleiraNoFogao = true
-let fogaoLigado = true
+
 ferverAgua(chaleiraNoFogao, fogaoLigado)
 console.log('Fazendo café')
