@@ -368,7 +368,7 @@
 
         <h1>Completar essa parte com a aula complementar</h1>
     </div>
-    <div>
+    <div class="manipulacao-datas">
         <h2>Manipulação de datas</h2>
         <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat">Material de apoio date</a>
         <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString">Material de apoio 2, date</a>
@@ -386,7 +386,110 @@
         <img src="./datas/toLocale.png" alt="">
         <p>Permite calcular datas de acordo com a localização do usuário. passando como parâmetro a lingua por exemplo. ('pt-BR'). Uma data de um calendário americano por exemplo pode usar esse método para corrigir.</p>
         <img src="./datas/api.png" alt="">
-        <p>Usando a própria api do js para manipular data que não leva em conta apenas o idioma que proporciona uma melhor maneira e mais avançada.</p>
+        <p>Usando a própria api do js para manipular data que não leva em conta apenas o idioma que proporciona uma melhor maneira e mais avançada. Ele permite diversas opções para modificar a data. <br>
+        Para formatar a data é preciso usar .format(dataParaFormatar)</p>
+        <a href="./datas/src/index.js">Exercício Formatando datas</a>
+        <p>Quando se usa um objeto para formatar datas é importante consultar a documentação para saber prêencher os campos corretamente.</p>
+    </div>
+    <div>
+        <h2>Gerenciador de pacotes</h2>
+        <p>Existe o npm e o yarn para gerenciamento de pacotes, todos os dois são bons. Quem fez o yarn foi a NPM inc que é subsidiaria do github e o yarn foi feito pelo facebook.</p>
+
+        <p>O gerenciador de pacotes faz: </p>
+        <ul>
+            <li>Gerencia pacotes e dependências de pacotes do projetos</li>
+            <li>Um pacote é uma biblioteca com códigos prontos para usar</li>
+            <li>Pacotes e dependências, ele faz o gerenciamento dessa arvore.</li>
+        </ul>
+        <code>
+            npm install nome-do-pacote
+        </code>
+        <p>Isso é como será baixado um pacote, mas no arquivo de configuração, o package.json é possível colocar todas as dependências de pacotes que o projeto vai usar.</p>
+        <img src="./NPM/src/packageJSON.png" alt="">
+        <p>Ao instalar o node o NPM geralmente vem junto.</p>
+
+        <h3>Gerenciamento de pacotes</h3>
+        <p>Para começar vá a raiz da pasta do projeto que deseja usar o npm e escreva</p>
+        <code>npm init</code>
+        <p>Após iniciar escreva:
+            <ul>
+                <li> nome do pacote</li>
+                <li> o package.json que será usado</li>
+                <li>a versão</li>
+                <li>descrição</li>
+                <li>o entrypoint (ponto de entrada, o arquivo principal do projeto)</li>
+                <li> Test commmand é se irá fazer algum tipo de teste</li>
+                <li>git-repository é o repositorio do github,</li>
+                <li>  palavra chave e são separadas por virgula</li>
+                <li> autor do projeto</li>
+                <li> a licença</li>
+            </ul> O retorno é o package.json para vistoriar e aprovar caso esteja tudo certo.E ao final um package.json será criado na pasta.</p>
+            <a href="./NPM/package.json">Exercício package.json</a>
+            <p>Depois disso já se pode instalar pacotes no projeto. O projeto a ser instalado será o kind of, que faz a verificação do tipo de variável</p>
+            <code>
+                npm install kind of --save
+            </code>
+            <p>O --save vai informar que será salvo na lista de dependências do package.json</p>
+            <img src="./NPM/src/dependences.png" alt="">
+            <p>No package.json agora qualquer momento que eu baixar o projeto já terá como dependência o que será preciso para rodar o projeto. E ele também cira uma pasta do nodeModules que terá a informação do pacote baixado</p>
+            <img src="./NPM/src/nodemodules.png" alt="">
+            <p>A ultima coisa que ele faz é a criação do arquivo packages-lock.json que informa a arvore de dependência do projeto, não só os pacotes como as versões. <br>
+            Geralmente esses dois arquivos serão versionados no github, e cada pacote adicionado ao projeto aparecerá em um quanto no outro. Já a pasta node-modules não será enviada para o github.</p>
+            <p>O método requied é nativo do javascript e só funciona no contexto do node. Se rodasse no navegador não funcionaria.</p>
+            <p>Quando se baixa o projeto e vem sem o arquivo do nodeModules, é preciso abrir o terminal na raiz e usar o npm install. Como o package.json está na raiz do projeto irá baixar tudo que precisa ser baixado.</p>
+            <a href="https://www.npmjs.com/">Para encontrar outros pacotes JS</a>
+    </div>
+    <div>
+        <h2>Modulos</h2>
+        <p>Modulos são arquivos que se pode exportar, e depois inportar em pontos expecificos do javascript. <br>
+        Geralmente código será escrito para usar em vários pontos do projeto, isso é reusabilidade. Quando for dar manutenção no código será preciso modificar apenas o arquivo do módulo para aplicar a alteração em todo o projeto.
+        </p>
+        <code>
+            <pre>
+                function somar(numero1, numero2){
+                    return numero1 + numero2
+                } 
+                
+                export  {somar}
+            </pre>
+        </code>
+        <p>Digamos que esse seja um módulo para operações matemáticas no código e para fazer isso é preciso usar o export da função, assim como feito acima.</p>
+        <p>Já para importar para outro arquivo sera feito de outra forma.</p>
+        <code>
+            <pre>
+                import {somar} from './operacoes-matematicas.js'
+                console.log(somar(2,5))
+            </pre>
+        </code>
+        <p>è preciso usar o import com a o que será importado e colocar o from que é a origem do modulo exportado, em alguns casos é preciso colocar .js no final, outros não. <br>
+        Mas não só isso, para que ele rode no projeto é preciso que no HTML ao chamar o arquivo javascript que contem o módulo, é preciso colocar o type="module"</p>
+        <a href="./Modulo/index.html">Exercício Moduloes</a>
+        <p>Para exportar mais de um módulo dentro do mesmo arquivo é preciso uma alteração. Ao invés de colocar export no inicio da função é preciso colocar no final do arquivo.</p>
+        <code> export {somar, multiplicar, dividir}</code>
+        <p>Dessa forma é preciso declarar o nome das funções a serem exportadas. E o import também irá ser declarado separado por virgula igualmente ao export com mais de uma função.</p>
+
+        <h3>2 Tipos de exportação</h3>
+        <p>Exportação padrão para ela ser usada precisa ser declarado que será usada a exportação padrão</p>
+        <code>
+            <pre>
+                export defaut function somar(n1, n2){
+                    return n1 + n2
+                }
+            </pre>
+        </code>
+        ou
+        <code>
+            <pre>
+                function somar(n1, n2){
+                    return n1 + n2
+                }
+                export defaut somar
+            </pre>
+        </code>
+        <p>Quando se usar o export defaut não da para usar as chaves, então se o import estiver usando chaves irá retornar erro. <br>
+        Quando se usa o export defaut só se pode ter uma exportação por arquivo. Independentemente do nome que se usar no import irá importar o que tem de ser importado como se fosse o nome de uma variável.</p>
+        <p>Já na exportação nomeada é a exportação com as chaves como mostrado acima. Mas nesse tipo de importação o nome do módulo tem que ser o mesmo nome do nome exportado.</p>
+        <p>É recomendado usar a exportação nomeada, pois se um arquivo usa uma exportação diferente do outro isso poderá quebrar o código caso eu precise alterar o nome da função e ela não seja padronizada.</p>
     </div>
 </body>
 </html>

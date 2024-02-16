@@ -1,0 +1,28 @@
+{
+  "name": "usando_npm",
+  "version": "1.0.0",
+  "description": "Projeto do curso javascript do basico ao avançado",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafinha-dev/JavaScript--DevEmDobro.git"
+  },
+  "keywords": [
+    "javascript",
+    "Fetch",
+    "API",
+    "lógica",
+    "métodos",
+    "arrays",
+    "objetos"
+  ],
+  "author": "Rafael Nunes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafinha-dev/JavaScript--DevEmDobro/issues"
+  },
+  "homepage": "https://github.com/rafinha-dev/JavaScript--DevEmDobro#readme"
+}
