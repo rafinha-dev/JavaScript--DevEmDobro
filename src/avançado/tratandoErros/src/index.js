@@ -52,12 +52,11 @@ let fogaoLigado = true
 
 async function iniciarProcessoDoCafe(){
 
-    try{
+try{
     const aguaFervida = await ferverAgua(chaleiraNoFogao, fogaoLigado)
     const cafePassado = await passarOCafe(aguaFervida)
     const cafeTomado = await tomarCafe(cafePassado)
     const xicaraLavada = await lavarXicara(cafeTomado)
-    
 }catch(err){
     console.log(err)
 }finally{

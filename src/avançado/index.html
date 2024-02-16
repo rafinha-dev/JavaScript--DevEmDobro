@@ -194,8 +194,166 @@
         </code>
         <p>Não é preciso ter um return para cada um dos fluxos, o return pode retornar o resultado da promisse. <br>
         Quando a promisse der erro, ele precisa ser tratado para que não dê erro no terminal, toda vez que é retornado o resolve ou reject elas são a mudança de estado.</p>
+    </div>
+    <div>
+        <h2>Then</h2>
+        <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise/then">Material de apoio.</a>
+        <p>O then só pode ser usado em promises, quando algo acontece no código e precisa ser executado depois que a promisse retornar o valor, então executa uma determinada função.</p>
+        <a href="./promisses/then/index.html">Exercício then</a>
 
-        <h3>Entendendo a promisse</h3>
+        <p>Com exemplo acima já uma forma de resolver o callback hell, já para ver como usar o then em uma situação maior: </p>
+        <a href="./promisses/then/src/promisses.js">Exercício them</a>
+        <p>Quando um passo depende do outro, é possível usar o then para escrever o código de forma linear, ao invéz de fazer uma pirâmide de encadeamento de função.</p>
+    </div>
+    <div>
+        <h2>Assinc e await</h2>
+        <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/async_function">Material de apoio funções assincronas.</a>
+        <p>O assinc awayt acaba eliminando o then do código, async é usado na frente da função imediata que vai ser chamado o awayt, se uma função estiver dentro do outra, quem precisa ter o async é a função imediata.</p>
+        <p>O await funciona para retornar o valor que está esperando, quando se usa o async sem usar o await ele irá retornar a promisse. O valor deve ser informado no resolve.</p>
+        <code>
+            <pre>
+                async function iniciarProcessoDoCafe(){
+                    const aguaFervida = await ferverAgua(chaleiraNoFogao, fogaoLigado)
+                    const cafePassado = await passarOCafe(aguaFervida)
+                    const cafeTomado = await tomarCafe(cafePassado)
+                    const xicaraLavada = await lavarXicara(cafeTomado)
+                    if(xicaraLavada) console.log('Finalizado café')
+                }
+                
+                iniciarProcessoDoCafe()
+            </pre>
+        </code>
+        <p>Uma função as vezes é preciso esperar o resultado de uma função para ela ser resolvida. E assim por diante ela acaba fazendo o papel do then</p>
+        <a href="./promisses/assincAwait/index.html">Exercício assinc awayt</a>
+    </div>
+    <div>
+        <h2>Tratando erros</h2>
+        <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Error">Referência tratando erros.</a>
+        <p>O tratamento de erro pode ser feito com o try catch para promisses. Tente isso, e falhar faça aquilo. Catch é pegar o erro.</p>
+        <code>
+            <pre>
+                async function iniciarProcessoDoCafe(){
+
+                    try{
+                        const aguaFervida = await ferverAgua(chaleiraNoFogao, fogaoLigado)
+                        const cafePassado = await passarOCafe(aguaFervida)
+                        const cafeTomado = await tomarCafe(cafePassado)
+                        const xicaraLavada = await lavarXicara(cafeTomado)
+                    }catch(err){
+                        console.log(err)
+                    }finally{
+                        console.log('Finalizado café')
+                    }
+                    }
+            </pre>
+        </code>
+        <p>No exemplo acima é mostrado o mesmo raciocínio do café, esse parâmetro será passado para o reject. O reject precisa de um parâmetro para ser informado para que algo aconteça no tratamento de erro como uma mensagem por exemplo. Quando se tem um erro no código sem um tratamento para ele como sintaxe por exemplo, ele não vai estourar o erro. <br>
+        Quando se usa o try catch o erro não da um erro fatal parando a aplicação.</p>
+        <p>Finaly é sempre executado depois do try catch e será independente de qualquer resultado. Escrito em bloco. Muito indicado para fechar conexão de banco de dados ou arquivos que foram abertos para leitura para que a conexão fique infinitamente aberta</p>
+        <a href="./tratandoErros/index.html">Exercício tratando erros</a>
+
+        <h3>throw</h3>
+        <p>O throw é uma exessão que é lançada manualmente antes de testar o try catch</p>
+
+        <pre>
+            <code>
+                if(typeof chaleiraNoFogao != 'boolean') throw "somente valores boleanos"
+            </code>
+        </pre>
+        <p>Caso caia no throw ele irá diretamente para o catch</p>
+    </div>
+    <div>
+        <h2>O que é uma api</h2>
+        <p>Aplication programin interface. É um conjunto de padrões de programação que vão abstrair muita coisa para quem está consumindo ou enviando dados. O acesso é de nível mais alto e são feito por Endpoints</p>
+        <ul>
+            <li>Get : buscar uma informação da api</li>
+            <li>Post: enviar uma informação da api</li>
+            <li>PUT : alterar o estado de alguma informação como editar</li>
+            <li>Delite: deletar um registro</li>
+        </ul>
+        <img src="./jsonJson/src/request.png" alt="">
+        <p>O get faz uma requisição para o  end point, e a api responde com um json. A API faz uma abstração e ela é como se fosse uma caixa preta e ela retorna o que se espera. <br>
+        Algumas APIs famosas: </p>
+        <a href="https://jsonplaceholder.typicode.com/">JSON placeholder</a>
+        <p>JSONPlaceholder é um serviço REST on-line gratuito que você pode usar sempre que precisar de alguns dados para exibir em suas aplicações. É ótimo para ser usado em tutoriais e simula um servidor, compartilhando exemplos de código.
+        Você pode simular requisições HTTP com GET, POST, PUT e DELETE</p>
+        <a href="https://makeup-api.herokuapp.com/">Makeup API</a>
+        <p>Um serviço onde você pode pesquisar produtos de maquiagem e fazer filtros por marca, preço, categoria de produto, tags e muito mais. Essa API também fornece uma representação visual de todos os dados JSON que estão disponíveis.
+            Não precisa registro.
+        </p>
+        <a href="https://deckofcardsapi.com/">Deck of cards API</a>
+        <p>Nessa API você pode embaralhar cartas de baralho, comprar uma carta, reembaralhar cartas, ganhar um novo baralho, adicionar uma pilha de cartas, comprar uma pilha de cartas e outros recursos.
+            Uma API muito divertida.</p>
+        <a href="https://opentdb.com/api_config.php">Trivia DB</a>
+        <p>O Open Trivia Database fornece uma API JSON completamente gratuita para uso em projetos de programação. O uso desta API não requer uma chave de API, basta gerar a URL com um clique de botão no site e você já pode usar a API no seu aplicativo para recuperar perguntas triviais.</p>
+        <a href="https://api.nasa.gov/">NASA</a>
+        <p>A API da Nasa é ideal se você deseja acessar dados de astronomia e imagens de planetas e galáxias.
+            Precisa de registro.</p>
+        <a href="https://developer.marvel.com/">marvel</a>
+        <p>A API Marvel Comics permite que os desenvolvedores acessem informações sobre a vasta biblioteca de quadrinhos da Marvel - desde o que está chegando agora, até 70 anos atrás.</p>
+        <a href="https://developers.google.com/youtube/">Youtube</a>
+        <p>A API do Youtube permite que você adicione funcionalidade do Youtube a sites e aplicativos.
+            Requer registro.</p>
+        <a href="https://developer.themoviedb.org/docs/getting-started">MovieDB</a>
+        <p>Uma API com dados de filmes, atores e programas de TV.</p>
+
+        <p>Várias empresas tem uma API publica como o google maps, o facebook, o github...</p>
+    </div>
+    <div>
+        <h2>JSON</h2>
+        <p>Uma sigla para javaScript object notation, um arquivo que contem uma serie de dados estruturados em forma de texto, utilizado para trafegar dados entre aplicações. Hoje ele substituiu o XML. Observe os links a seguir com os mesmos dados.</p>
+        <a href="./jsonJson/src/filmes.xml">Exemplo XML</a>
+        <a href="./jsonJson/src/filmes.json">Exemplo JSON</a>
+        <p>O json serve para transferir dados entre aplicações, além de servir para fazer configurações de projetos em diferentes linguagens.</p>
+    </div>
+    <div>
+        <h2>Requisição Fetch</h2>
+        <p>Requisição GET, O fetch vai servir pra trabalhar com APIs, e o fetch retornará uma promisse, e no resolve terpa um objeto do retorno da API. Ele é bem abstraído.</p>
+        <a href="./fetch/index.html">Exercício fetch das cartas</a>
+        <p>O exercício é da API de cartas, sempre leia o que a API faz e como usar os end-points, especialmente APIs que tem autenticação é muito importante ler a documentação.</p>
+
+        <p>Uma das primeiras coisas é copiar o end point da api e atribuir a uma variavel com a url. O fetch vai ser reponsável por buscar os dados dessa API, o resultados dos dados que vão ser buscados também devem ser armazenados em uma variável, sempre retornará uma promisse.</p>
+        <code>
+            <pre>
+                function criarBaralhoEmbaralhado(){
+                    const url = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1"
+                    const resposta = fetch(url)
+                }
+                criarBaralhoEmbaralhado()
+            </pre>
+        </code>
+        <p>Ao executar essa promisse você verá que o retorno é uma promisse com status de pending, é preciso informar o await para esperar até que se tenha o resultado pronto. Ao usar o await vera que essa promisse é um objeto. </p>
+
+        <code>
+            <pre>
+                assync function criarBaralhoEmbaralhado(){
+                    const url = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1"
+                    const resposta = await fetch(url)
+                }
+                criarBaralhoEmbaralhado()
+            </pre>
+        </code>
+        <p>O JSON é pode ser um método do retorno da api Fetch. <br>
+        Como no caso acima poderia ser resposta.json() , que também retorna uma promisse. O que o json faz e transformar o corpo do objeto, e é esse objeto que nesse objeto irá pegar o id, que de acordo com a documentação é a importante. </p>
+        <p>Na documentação o endpoint para tirar uma carta é outro, então foi criado uma nova função com o deck-id salvando o resultado do Fetch. Só é possível tirar a carta com o deck_id, esse vem pelo json.</p>
+        <code>
+            <pre>
+                async function tirarUmaCartaAleatoriaDoBaralho(){
+                    const baralho = await criarBaralhoEmbaralhado()
+                    const carta = await tirarUmaCarta(baralho.deck_id)
+                }
+            </pre>
+        </code>
+        <p>
+            Como esse código está assincrono, não irá atrapalhar o fluxo da página. O JSON retornado é navegavel pelas suas propriedades assim como um objeto que pode ter arrays que também são navegaveis.
+        </p>
+        <p>
+            Desafio! 
+            Crie um fluxo em que não crie um novo baralho a cada carta, mas sim só tire as cartas do baralho
+        </p>
+    </div>
+    <div class="entendendo-promisses">
+        <h2>Entendendo a promisse</h2>
         <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled">Material de referência promisse all.settled()</a>
         <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all">Material de referência promisse.all</a>
         <p>Existirão 2 possiveis estados da promisse</p>
@@ -211,7 +369,24 @@
         <h1>Completar essa parte com a aula complementar</h1>
     </div>
     <div>
-
+        <h2>Manipulação de datas</h2>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat">Material de apoio date</a>
+        <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString">Material de apoio 2, date</a>
+        <p>As datas são representadas com o objeto Date no javascript. É possível conseguir informações de componentes de datas, e existem diversos métodos para data, tanto para buscar quanto para modificar.</p>
+        <ul>
+            <li>const dataAtual = new Date()</li>
+            <li>dia = dataAtual.getDate()</li>
+            <li>mes = dataAtual.getMonth()</li>
+            <li>ano = dataAtual.getFullYear()</li>
+        </ul>
+        <img src="./datas/2024-02-15_22-50.png" alt="">
+        <p>Usado para manipulação de datas</p>
+        <img src="./datas/apiJavascript.png" alt="">
+        <p>Usado para operações entremo idade, no javasript. Preste atenção no padrão da string usada para idade. Estes calculos de data precisam passar pelo método Math.floor com o calculo em milisegundos para retornar o valor correto.</p>
+        <img src="./datas/toLocale.png" alt="">
+        <p>Permite calcular datas de acordo com a localização do usuário. passando como parâmetro a lingua por exemplo. ('pt-BR'). Uma data de um calendário americano por exemplo pode usar esse método para corrigir.</p>
+        <img src="./datas/api.png" alt="">
+        <p>Usando a própria api do js para manipular data que não leva em conta apenas o idioma que proporciona uma melhor maneira e mais avançada.</p>
     </div>
 </body>
 </html>
