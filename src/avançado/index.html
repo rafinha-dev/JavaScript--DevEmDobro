@@ -457,6 +457,32 @@
             <p>O método requied é nativo do javascript e só funciona no contexto do node. Se rodasse no navegador não funcionaria.</p>
             <p>Quando se baixa o projeto e vem sem o arquivo do nodeModules, é preciso abrir o terminal na raiz e usar o npm install. Como o package.json está na raiz do projeto irá baixar tudo que precisa ser baixado.</p>
             <a href="https://www.npmjs.com/">Para encontrar outros pacotes JS</a>
+
+            <h3>Gerenciando versões com nodeJS</h3>
+            <p>O node JS não é apenas um tecnologia é uma revolução que trouxe o javascript para o servidor tornando mais acessível e escalavel se destacando por sua evolução continua.</p>
+            <p>Existe um desafio de gerenciar muitas versões de nodeJS em projetos, se um projeto é desenvolvido em uma versão de node, um projeto antigo pode não se entender bem com a nova versões do node, as bibliotecas alicerce ficam desatualizadas ou APIs totalmente reformuladas que não funcionam na nova versão. Isso cria 2 cenários, tentar manter o projeto no ambiente anterior, ou gastar o tempo para reformular o projeto para se adaptar a nova versão.</p>
+            <p>A importância crítica do gerenciamento de versão vem de ter que ficar instalando e reinstalando versões para cada projeto, podendo se perder nas impossibilidades de incompatibilidades e o NVM resolve esse problema. Permite instalar gerenciar e alternar o node com alguns comandos.</p>
+            <img src="./NPM/src/nvm.png" alt="">
+            <p> Com o nvm é possível manter diferentes versões do Node no mesmo sistema operacional. Cada projeto pode vir em uma versão do node js.</p>
+
+            <a href="https://github.com/nvm-sh/nvm">nvm linux</a>
+
+            <h3>Instalação</h3>
+            <code>
+                curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh 
+
+                export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+            </code>
+            <p>Apos a intalalação com essas duas linhas de comando, (ver se o comando de instalação permanece o mesmo a na descrição do crul) será possivel gerenciar e instalar versões do node no sistema operacional.</p>
+            <code>
+                node -v // versão usada
+                nvm use 20  // trocar para versão 20 instalada
+                nvm install 20 // instala a latest dessa versão.
+            </code>
+            <p>O gerenciamento de versão é necessário para um ambiente profissional.
+            </p>
+            <img src="./NPM/src/versão.png" alt="">
     </div>
     <div class="modulos">
         <h2>Modulos</h2>
