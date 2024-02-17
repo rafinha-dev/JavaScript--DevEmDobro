@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>JavaScript avançado</h1>
-    <div>
+    <div class="filter">
         <h2>Filter</h2>
         <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">Material de apoio</a>
         <p>O filter é uma função que aceita outra função como parâmetro, e ela vai ser usada para filtrar. Imagine que voce tem um aray com objeto de pessoas de varias idades e queira filtrar somente as de 33 anos, seria possível fazer com laço for.</p>
@@ -27,7 +27,7 @@
         <a href="./filter/src/filter/src/filterTeste.js">Exercício apenas filter</a>
         <p>Como no exercício é só usar o callback, usar o pessoas como parâmetro e retornar os que tem valor = a 33. Se esse filter for feito dentro de uma variável ela já irá guardar o resultado. </p>
     </div>
-    <div>
+    <div class="map">
         <h2>Map</h2>
         <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map">Material de apoio</a>
         <p>O map parece com o filter mas é usado para transformar o array em um array totalmente novo com o mesmo número de elementos. É como uma cópia desse elemento.</p>
@@ -44,7 +44,7 @@
         <p>Usando o map ele vai receber uma função como parâmetro e essa função pode-se usar o objeto percorrido como parâmetro dela. Essa função deverá retornar o resultado a variavel a qual está sendo atribuida o map, é interessante para iterar sobre objetos em um array, ou concatenar os valores desse objeto. Ele recomendou usar mais o map() que o forEach() para iterar sobre um array.</p>
 
     </div>
-    <div>
+    <div class="reduce">
         <h2>Reduce</h2>
         <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce">Material de referência.</a>
 
@@ -65,13 +65,13 @@
         Existem 2 parâmetros para o map, o objeto que irá receber, e o objeto que será iterado, confira o exercício</p>
         <p> Para fazer a iteração e atribuir o valor com uma variável com for, é preciso colocar o sinal += pois se não será substituida, mas no reduce, já que ele cria um array é apenas colocar o + que não irá substituir os valores de dentro.</p>
     </div>
-    <div>
+    <div class="interpolacao">
         <h2>Interpolação de string</h2>
         <p>Antes do es6 não existia a interpolação, fazendo com que para concatenar é preciso interromper a string e colocar um + para inserir outros valores.</p>
         <a href="./templateString/src/index.js">Exercício interpolação de string</a>
         <p>Agora é possível colocar o texto com a variavel sem usar o +, apenas colocando a variável dentro de um cifrão com chaves na frente e a expreção dentro de crases. Também seria possivel chamar função dentro das crases</p>
     </div>
-    <div>
+    <div class="desustruturacao">
         <h2>Desustruturação de objetos e arrays</h2>
         <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">Material de apoio</a>
         <p></p>
@@ -98,7 +98,7 @@
         Como está usando o mesmo nome da propriedade com o nome da variavel é possível omitir o nome da propriedade.</p>
         <p>Já na desestruturação de array diferente do objeto que usa chaves será preciso usar o array e atribuir com o array. Na desestruturação do array é baseada no indice do array, não vai funcionar os : da propriedade.</p>
     </div>
-    <div>
+    <div class="spread">
         <h2>Spread</h2>
         <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Spread_syntax">Material de apoio</a>
         <p>Com o spread é possível expandir os elementos de um objeto iteravel, são objetos que podem ser precorridos.</p>
@@ -113,7 +113,7 @@
         Antigamente para unir dois arrays é preciso usar o metodo concat(), hoje é só usar o spread dentro de um array novo e colocar junto com os arrays que será preciso concatenar. E ele também serve para clonar um objeto</p>
         <a href="./spread/index.html">Exercício spread</a>
     </div>
-    <div>
+    <div class="rest">
         <h2>REST</h2>
         <p>O parâmetro rest permite passar um número indefinido de arumentos que se passa para uma função. Bem parecido com o spread, ele é uma forma de permitir passar um array não declarado como parâmetro para um função. Se eu quiser criar uma lista de nomes e esses nomes serem passados dentro de uma mesma mensagem, é possível usar o REST para mandar essa mensagem por parâmetro um um calback como map ou ForEach.</p>
         <code>
@@ -131,7 +131,7 @@
         <a href="./REST/index.html">Exercício rest</a>
         <p>O Rest só pode ser passado como últmo parâmetro.</p>
     </div>
-    <div>
+    <div class="set-time">
         <h2>Set time out ou settimeInterval</h2>
         <p>Ambas são callbacks e são funções assincronas, o settimeout executa um código depois de um periodo de tempo, e o interval em um determinado intervalo de tempo.</p>
     
@@ -147,14 +147,14 @@
     <p>No caso do setTimeInterval(), será executada várias vezes de acordo com o intervalo que for determinado.</p>
     <p>Para parar e colocar uma interrupção no intervalo é preciso atribuir essa função a uma variável, e usar o método clearInterval() ou clearTimeOut().</p>
     </div>
-    <div>
+    <div class="assincona">
         <h2>Assincronismo</h2>
         <a href="https://www.30secondsofcode.org/js/s/sync-async/">Material de apoio Sincronismo e assincronismo</a>
         <p>O javascript é uma linguagem sincrona, tem uma dependência de execução de uma linha para outra. já funções assincronas são executadas independente da ordem de execução pois elas não dependem da linha de cima e da linha de baixo.</p>
         <p>Fazer um café pode ser feito de duas manairas, colocar um café para ferver agua e esperar ela ser fervida, ou fazer as outras tarefas enquanto a agua está sendo fervida. Uma forma é assincrona, e outra é sincrona.</p>
         <a href="./sincronismoAssincronismo/index.html">Exercício assincronismo</a>
     </div>
-    <div>
+    <div class="promisses">
         <h2>Promisses</h2>
         <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise">Material de apoio Promisses.</a>
         <p>Promisses são uma maneira um pouco mais nova de se trabalhar com assicronissidade no javascript de forma legivel e gerenciavel, facilita o tratamento de exessões.Representam um valor que pode ou não estar disponível no futuro. </p>
@@ -195,7 +195,7 @@
         <p>Não é preciso ter um return para cada um dos fluxos, o return pode retornar o resultado da promisse. <br>
         Quando a promisse der erro, ele precisa ser tratado para que não dê erro no terminal, toda vez que é retornado o resolve ou reject elas são a mudança de estado.</p>
     </div>
-    <div>
+    <div class="then">
         <h2>Then</h2>
         <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise/then">Material de apoio.</a>
         <p>O then só pode ser usado em promises, quando algo acontece no código e precisa ser executado depois que a promisse retornar o valor, então executa uma determinada função.</p>
@@ -205,8 +205,8 @@
         <a href="./promisses/then/src/promisses.js">Exercício them</a>
         <p>Quando um passo depende do outro, é possível usar o then para escrever o código de forma linear, ao invéz de fazer uma pirâmide de encadeamento de função.</p>
     </div>
-    <div>
-        <h2>Assinc e await</h2>
+    <div class="async-await">
+        <h2>Async e await</h2>
         <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/async_function">Material de apoio funções assincronas.</a>
         <p>O assinc awayt acaba eliminando o then do código, async é usado na frente da função imediata que vai ser chamado o awayt, se uma função estiver dentro do outra, quem precisa ter o async é a função imediata.</p>
         <p>O await funciona para retornar o valor que está esperando, quando se usa o async sem usar o await ele irá retornar a promisse. O valor deve ser informado no resolve.</p>
@@ -226,7 +226,7 @@
         <p>Uma função as vezes é preciso esperar o resultado de uma função para ela ser resolvida. E assim por diante ela acaba fazendo o papel do then</p>
         <a href="./promisses/assincAwait/index.html">Exercício assinc awayt</a>
     </div>
-    <div>
+    <div class="tratar-erros">
         <h2>Tratando erros</h2>
         <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Error">Referência tratando erros.</a>
         <p>O tratamento de erro pode ser feito com o try catch para promisses. Tente isso, e falhar faça aquilo. Catch é pegar o erro.</p>
@@ -262,7 +262,7 @@
         </pre>
         <p>Caso caia no throw ele irá diretamente para o catch</p>
     </div>
-    <div>
+    <div class="API">
         <h2>O que é uma api</h2>
         <p>Aplication programin interface. É um conjunto de padrões de programação que vão abstrair muita coisa para quem está consumindo ou enviando dados. O acesso é de nível mais alto e são feito por Endpoints</p>
         <ul>
@@ -299,14 +299,14 @@
 
         <p>Várias empresas tem uma API publica como o google maps, o facebook, o github...</p>
     </div>
-    <div>
+    <div class="json">
         <h2>JSON</h2>
         <p>Uma sigla para javaScript object notation, um arquivo que contem uma serie de dados estruturados em forma de texto, utilizado para trafegar dados entre aplicações. Hoje ele substituiu o XML. Observe os links a seguir com os mesmos dados.</p>
         <a href="./jsonJson/src/filmes.xml">Exemplo XML</a>
         <a href="./jsonJson/src/filmes.json">Exemplo JSON</a>
         <p>O json serve para transferir dados entre aplicações, além de servir para fazer configurações de projetos em diferentes linguagens.</p>
     </div>
-    <div>
+    <div class="requisicao-fetch">
         <h2>Requisição Fetch</h2>
         <p>Requisição GET, O fetch vai servir pra trabalhar com APIs, e o fetch retornará uma promisse, e no resolve terpa um objeto do retorno da API. Ele é bem abstraído.</p>
         <a href="./fetch/index.html">Exercício fetch das cartas</a>
@@ -356,17 +356,36 @@
         <h2>Entendendo a promisse</h2>
         <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled">Material de referência promisse all.settled()</a>
         <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all">Material de referência promisse.all</a>
-        <p>Existirão 2 possiveis estados da promisse</p>
+        <p>Existirão 2 possiveis estados da promisse mais o pending, e eles são ecenciais pois é possível escrever código mais gerenciável e legivel.</p>
         <img src="./promisses/src/promisse.png" alt="">
-        <p>Uma promisse pode ser como comer pizza em uma pizzaria, com a analogia semelhante ao assincronismo. Se der tudo certo retorna um valor se não retorna outro. </p>
-        <img src="./promisses/src/cenarios.png" alt="">
+        <p>Ao retorno do resultado da promisse, é usado o then ou catch para tratar o resultad. <br>
+        Uma promisse pode ser como comer pizza em uma pizzaria, com a analogia semelhante ao assincronismo. Se faz a chamada da promisse, espera ser executada, captura o resultado e der tudo certo retorna um valor se não retorna outro, esse retorno pode demorar. </p>
+        <p>Promisses são poderosas pois elas podem tratar operações que não tem resultado instantâneamente se for resolvida e retornar fullfild pode ser tratada com .them. Ela ajuda a evitar o callback hell</p>
+        <figure>
+            <img src="./promisses/src/cenarios.png" alt="">
+            <figcaption>Estes os estados e os icones e os gifs de alguns cenários.</figcaption>
+        </figure>
 
         <h3>Promisse.all()</h3>
-        <p>Se quiser que todas as pizzas chegem ao mesmo tempo poderia usar esse metodo, mas se uma falhar não retorna nenhuma.</p>
-        <code> const x = Promisse.all([p1, p2, p3])</code>
-        <p>O promisse.all tem um array, se precisar do valor das 3 promisses se usa o promisse.all, mas se precisar de ao menos uma, utiliza o .allSettle(), e caso não tenha nenhuma promisse retorna null.</p>
+        <p>Se quiser que todas as pizzas chegem ao mesmo tempo deve-se usar esse metodo, mas se uma falhar não retorna nenhuma das promisses.</p>
+        
+        <a href="./promisses/promisses.all.allSettlle/index.js">Exercício simulação de requisição com promisses.</a>
+        <p>Como o exercício acima é uma simulação, é preciso instanciar o resolve e reject manualmente para funcionarem normalmente nos testes.  instanciando o construtor de erro do JS quando usar o reject</p>
 
-        <h1>Completar essa parte com a aula complementar</h1>
+        <code> const x = Promisse.all([p1, p2, p3])</code>
+
+        <img src="./promisses/src/Peek 2024-02-16 17-01.gif" alt="">
+        <p>Usando este metodo caso uma das promisses falhar, ele retorna somente a que falhou, quando o primeiro falhar este será o resultado. <br>
+        O promisse.all tem um array, se for preciso exclusivamente o valor das 3 promisses use o promisse.all, mas se precisar de ao menos uma, utiliza o .allSettle(), e caso não tenha nenhuma promisse retorna null e informa qual falhou. <br>
+        </p>
+
+        <h3>Promisse.allSetlled()</h3>
+        <p>Se uma pizza der errado ainda vai ter as outras pizzas e saber o estado de todas elas. E caso não tenha nada mantem como antes e retorna null</p>
+        <img src="./promisses/src/allsettlle.gif" alt="">
+        <p>Estruturalmente a única coisa que muda é a chamada usando o método allSettlle() no lugar .all. Na prática o método .all em alguns casos pode vir informando dados mais descritivos que o allSettlle() em um array de objetos por exemplo.</p>
+
+        <a href="./promisses/promisses.all.allSettlle/API.js">Exercício consultando API com all e allselected</a>
+        
     </div>
     <div class="manipulacao-datas">
         <h2>Manipulação de datas</h2>
@@ -391,7 +410,7 @@
         <a href="./datas/src/index.js">Exercício Formatando datas</a>
         <p>Quando se usa um objeto para formatar datas é importante consultar a documentação para saber prêencher os campos corretamente.</p>
     </div>
-    <div>
+    <div class="gerenciar-pacotes">
         <h2>Gerenciador de pacotes</h2>
         <p>Existe o npm e o yarn para gerenciamento de pacotes, todos os dois são bons. Quem fez o yarn foi a NPM inc que é subsidiaria do github e o yarn foi feito pelo facebook.</p>
 
@@ -439,7 +458,7 @@
             <p>Quando se baixa o projeto e vem sem o arquivo do nodeModules, é preciso abrir o terminal na raiz e usar o npm install. Como o package.json está na raiz do projeto irá baixar tudo que precisa ser baixado.</p>
             <a href="https://www.npmjs.com/">Para encontrar outros pacotes JS</a>
     </div>
-    <div>
+    <div class="modulos">
         <h2>Modulos</h2>
         <p>Modulos são arquivos que se pode exportar, e depois inportar em pontos expecificos do javascript. <br>
         Geralmente código será escrito para usar em vários pontos do projeto, isso é reusabilidade. Quando for dar manutenção no código será preciso modificar apenas o arquivo do módulo para aplicar a alteração em todo o projeto.
